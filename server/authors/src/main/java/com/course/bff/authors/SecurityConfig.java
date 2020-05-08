@@ -23,13 +23,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.authenticationProvider = authenticationProvider;
     }
 
-    @Bean
-    public HttpClient httpClient() {
-        return HttpClient.newBuilder()
-                .connectTimeout(Duration.ofSeconds(3))
-                .build();
-    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authenticationProvider(authenticationProvider);
