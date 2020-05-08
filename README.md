@@ -4,7 +4,9 @@ Education project about creating frontend friendly backend microservice infrastr
 
 #### Stages
 [x] Feel the pain - communicate with backend microservices directly
+
 [ ] Relief - communicate thru API gateway
+
 [ ] Shiny modern world - API gateway + GraphQL
 
 ## Backend
