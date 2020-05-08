@@ -27,7 +27,7 @@ public class WebSocketSessionHandler extends StompSessionHandlerAdapter {
 
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
-        LOG.info("WS message: payload={}", payload);
+//        LOG.info("WS message: payload={}", payload);
         String msg = (String) payload;
         messageHandler.accept(msg);
     }

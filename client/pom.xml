@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.vdobrikov</groupId>
-  <artifactId>client-minimal</artifactId>
+  <artifactId>client</artifactId>
   <packaging>pom</packaging>
 
   <name>client</name>
@@ -14,11 +14,13 @@
   <modules>
     <module>shared</module>
     <module>client-min</module>
+    <module>client-max</module>
   </modules>
 
 
   <properties>
     <java.version>11</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>

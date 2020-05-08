@@ -26,7 +26,6 @@ public class App {
         var config = new Config();
 
         var httpClient = HttpClientProvider.createHttpClient(config.getSystemName(), config.getAuthToken().toCharArray());
-        LOG.info("client={} token={}", config.getSystemName(), config.getAuthToken());
         var restClient = new RestClient(httpClient, new ObjectMapper());
 
         var authorService = new AuthorService(config.getAuthorUrl(), restClient);
@@ -35,9 +34,8 @@ public class App {
 
         for (Book book : bookService.list()) {
             Optional<Author> maybeAuthor = authorService.get(book.getAuthorId());
-            outputService.out("Book: " + book.getTitle() +
-                    "\n\tAuthor: " + maybeAuthor.map(author -> author.getFirstName() + " " + author.getLastName())
-                        .orElse(book.getAuthorId().toString()));
+            outputService.out("Book: " + book +
+                    "\n\tAuthor: " + maybeAuthor.map(Author::toString).orElse(book.getAuthorId().toString()));
         }
 
         stompSebSocketClient.connect();
